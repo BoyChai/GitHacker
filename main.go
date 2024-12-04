@@ -8,6 +8,7 @@ import (
 
 func main() {
 	t := flag.String("t", "url", "指定类型,默认为url")
+	recovery.OutputDir = *flag.String("o", "GitHacker_Output", "输出目录,默认值为当前位置的GitHacker_Output目录")
 
 	flag.Parse()
 

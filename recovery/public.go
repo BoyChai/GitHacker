@@ -8,7 +8,9 @@ import (
 	"github.com/go-git/go-git/v5/plumbing/object"
 )
 
-func restoreFilesFromGitDir(gitDir string, outputDir string) error {
+var OutputDir string
+
+func restoreFilesFromGitDir(gitDir string) error {
 	// 打开本地Git仓库
 	r, err := git.PlainOpen(gitDir)
 	if err != nil {
@@ -36,7 +38,7 @@ func restoreFilesFromGitDir(gitDir string, outputDir string) error {
 	// 开始恢复
 	return tree.Files().ForEach(func(file *object.File) error {
 		// 构建输出文件的完整路径
-		outputFilePath := filepath.Join(outputDir, file.Name)
+		outputFilePath := filepath.Join(OutputDir, file.Name)
 
 		// 获取文件内容
 		content, err := file.Contents()
