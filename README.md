@@ -1,4 +1,7 @@
 # GitHacker
+## 下载
+[Releases](https://github.com/BoyChai/GitHacker/releases)  
+[最新构建下载](https://jenkins.workstation.boychai.xyz/job/GitHacker-Pipline/)
 ## 帮助
 ```bash
 PS E:\GoLang\GitHacker> .\GitHacker.exe -h
