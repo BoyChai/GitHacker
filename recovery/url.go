@@ -34,9 +34,13 @@ func removeControlCharacters(s string) string {
 	return result.String()
 }
 
+func replaceColon(filepath string) string {
+	return strings.Replace(filepath, ":", "_", -1)
+}
+
 func saveFile(filePath string, data string) {
 	oldPath := filePath
-	filePath = filepath.Clean(OutputDir + "/" + filePath)
+	filePath = replaceColon(filepath.Clean(OutputDir + "/" + filePath))
 	filePath = removeControlCharacters(filePath)
 	dir := filepath.Dir(filePath) // 获取文件的目录路径
 
